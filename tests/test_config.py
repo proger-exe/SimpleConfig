@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-from simple_config import SimpleConfig
+from simpleconfig import SimpleConfig
 
 
 PATH_TO_TEST_CONFIG = './test.smpl'

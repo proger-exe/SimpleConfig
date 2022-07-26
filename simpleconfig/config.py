@@ -9,7 +9,7 @@ class SimpleConfig:
         key = field[0]
         value = field[1]
         prepared_key = key.strip()
-        prepared_value = value.strip().split("\\n")[0]
+        prepared_value = value.strip().split("//")[0]
         self.data.update({prepared_key: prepared_value})
 
     def parse(self, path: str) -> None:

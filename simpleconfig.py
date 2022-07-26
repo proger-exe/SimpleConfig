@@ -1,5 +1,5 @@
 
-class EasyConfig:
+class SimpleConfig:
 	def __init__(self):
 		self.data = {}
 

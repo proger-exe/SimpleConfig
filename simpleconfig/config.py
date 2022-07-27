@@ -13,8 +13,9 @@ def prepare_value(value: str) -> str:
 
 
 class SimpleConfig:
-    def __init__(self) -> None:
+    def __init__(self, dilimitar: str = "=") -> None:
         self.data = {}
+        self.dilimitar = dilimitar
 
     def update_data(self, field: List[str]) -> None:
         key = field[0]
@@ -28,7 +29,7 @@ class SimpleConfig:
         with open(path) as file:
             data = file.readlines()
             for field in data:
-                field_ = field.split('=')
+                field_ = field.split(self.dilimitar)
                 self.update_data(field_)
 
     def get(self, item: str) -> str:

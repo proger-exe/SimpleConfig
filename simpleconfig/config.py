@@ -32,6 +32,8 @@ class SimpleConfig:
     def base_parse(self, data: str) -> None:
         lines = data.splitlines()
         for field in lines:
+            if not field:
+                continue
             field_ = field.split(self.dilimitar)
             self.update_data(field_)
 

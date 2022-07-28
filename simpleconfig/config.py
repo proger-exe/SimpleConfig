@@ -27,10 +27,15 @@ class SimpleConfig:
 
     def parse(self, path: str) -> None:
         with open(path) as file:
-            data = file.readlines()
-            for field in data:
-                field_ = field.split(self.dilimitar)
-                self.update_data(field_)
+            self.base_parse(file.read())
+
+    def base_parse(self, data: str) -> None:
+        lines = data.splitlines()
+        for field in lines:
+            if not field:
+                continue
+            field_ = field.split(self.dilimitar)
+            self.update_data(field_)
 
     def get(self, item: str) -> str:
         return self.data[item]

@@ -1,4 +1,4 @@
-from .config import SimpleConfig
+from .config import SimpleConfig, ParseException
 
 
 __all__ = [

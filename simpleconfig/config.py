@@ -37,7 +37,7 @@ class SimpleConfig:
             if not field:
                 continue
             elif self.dilimitar not in field:
-                raise ParseException(f"Line {linex.index(field)} is incorrent!")
+                raise ParseException(f"Line {lines.index(field)} is incorrent!")
             field_ = field.split(self.dilimitar)
             self.update_data(field_)
 
